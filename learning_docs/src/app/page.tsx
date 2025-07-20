@@ -2,81 +2,46 @@
 
 import React from 'react';
 
+import CssSpring from '@/components/CssSpring';
+import Drag from '@/components/Drag';
+import EnterAnimation from '@/components/EnterAnimation';
+import ExitAnimation from '@/components/ExitAnimation';
+import Gestures from '@/components/Gestures';
+import HtmlContent from '@/components/HtmlContent';
+import Keyframes from '@/components/Keyframes';
+import KeyframeWildcards from '@/components/KeyframeWildcards';
+import Rotate from '@/components/Rotate';
+import TransitionOptions from '@/components/TransitionOptions';
+import UseAnimationFrame from '@/components/UseAnimationFrame';
+import FollowPointerWithSpring from '@/components/FollowPointerWithSpring';
+import LayoutAnimation from '@/components/LayoutAnimation';
+import MotionAlongPath from '@/components/MotionAlongPath';
+import Parallax from '@/components/Parallax';
+import PathDrawing from '@/components/PathDrawing';
+import SplitText from '@/components/SplitText';
+import PathMorphing from '@/components/PathMorphing';
+
 const Page = () => {
   return (
     <div className="py-4 px-8">
-      <fieldset>
-        <legend>CSS spring</legend>
-        <div id="springContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Drag</legend>
-        <div id="dragContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Enter Animation</legend>
-        <div id="enterContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Exit Animation</legend>
-        <div id="exitContainer "></div>
-      </fieldset>
-      <fieldset>
-        <legend>Gestures</legend>
-        <div id="gesturesContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>HTML Content</legend>
-        <div id="htmlContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Keyframes</legend>
-        <div id="KeyframesContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Keyframe Wildcards</legend>
-        <div id="wildcardsContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Rotate</legend>
-        <div id="rotateContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Transition Options</legend>
-        <div id="transitionContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>useAnimationFrame</legend>
-        <div id="useAnimationFrameContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Follow Pointer With Spring</legend>
-        <div id="followPointerContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Layout Animation</legend>
-        <div id="layoutContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Motion Along a Path</legend>
-        <div id="motionPathContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Parallax</legend>
-        <div id="parallaxContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Path Drawing</legend>
-        <div id="pathDrawContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Split Text</legend>
-        <div id="splitTextContainer"></div>
-      </fieldset>
-      <fieldset>
-        <legend>Path morphing</legend>
-        <div id="pathMorphContainer"></div>
-      </fieldset>
+      <CssSpring />
+      <Drag />
+      <EnterAnimation />
+      <ExitAnimation />
+      <Gestures />
+      <HtmlContent />
+      <Keyframes />
+      <KeyframeWildcards />
+      <Rotate />
+      <TransitionOptions />
+      <UseAnimationFrame />
+      <FollowPointerWithSpring />
+      <LayoutAnimation />
+      <MotionAlongPath />
+      <Parallax />
+      <PathDrawing />
+      <SplitText />
+      <PathMorphing />
     </div>
   );
 };
