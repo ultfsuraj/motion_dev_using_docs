@@ -9,8 +9,8 @@ const UseAnimationFrame = () => {
   useAnimationFrame((t) => {
     if (!ref.current) return;
 
-    const rotate = Math.sin(t / 10000) * 200;
-    const y = (1 + Math.sin(t / 1000)) * -50;
+    const rotate = Math.sin(t / 5000) * 200;
+    const y = (1 + Math.sin(t / 500)) * -50;
     ref.current.style.transform = `translateY(${y}px) rotateX(${rotate}deg) rotateY(${rotate}deg) `;
   });
 
@@ -19,13 +19,13 @@ const UseAnimationFrame = () => {
       <legend>Use Animation Frame</legend>
       <div id="useAnimationFrameContainer">
         <div className="container border border-white">
-          <div className="cube" ref={ref}>
-            <div className="side front"></div>
-            <div className="side left"></div>
-            <div className="side right"></div>
-            <div className="side top"></div>
-            <div className="side bottom"></div>
-            <div className="side back"></div>
+          <div className="cube border border-white" ref={ref}>
+            Cube<div className="side front">front</div>
+            <div className="side left">left</div>
+            <div className="side right">right</div>
+            <div className="side top">top</div>
+            <div className="side bottom">bottom</div>
+            <div className="side back">back</div>
           </div>
           <StyleSheet />
         </div>
