@@ -1,30 +1,30 @@
 'use client';
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import CssSpring from '@/components/CssSpring';
-import Drag from '@/components/Drag';
-import EnterAnimation from '@/components/EnterAnimation';
-import ExitAnimation from '@/components/ExitAnimation';
-import Gestures from '@/components/Gestures';
-import HtmlContent from '@/components/HtmlContent';
-import Keyframes from '@/components/Keyframes';
-import KeyframeWildcards from '@/components/KeyframeWildcards';
-import Rotate from '@/components/Rotate';
-import TransitionOptions from '@/components/TransitionOptions';
-import UseAnimationFrame from '@/components/UseAnimationFrame';
-import FollowPointerWithSpring from '@/components/FollowPointerWithSpring';
-import LayoutAnimation from '@/components/LayoutAnimation';
-import MotionAlongPath from '@/components/MotionAlongPath';
-import Parallax from '@/components/Parallax';
-import PathDrawing from '@/components/PathDrawing';
-import SplitText from '@/components/SplitText';
-import PathMorphing from '@/components/PathMorphing';
+const CssSpring = lazy(() => import('@/components/CssSpring'));
+const Drag = lazy(() => import('@/components/Drag'));
+const EnterAnimation = lazy(() => import('@/components/EnterAnimation'));
+const ExitAnimation = lazy(() => import('@/components/ExitAnimation'));
+const Gestures = lazy(() => import('@/components/Gestures'));
+const HtmlContent = lazy(() => import('@/components/HtmlContent'));
+const Keyframes = lazy(() => import('@/components/Keyframes'));
+const KeyframeWildcards = lazy(() => import('@/components/KeyframeWildcards'));
+const Rotate = lazy(() => import('@/components/Rotate'));
+const TransitionOptions = lazy(() => import('@/components/TransitionOptions'));
+const UseAnimationFrame = lazy(() => import('@/components/UseAnimationFrame'));
+const FollowPointerWithSpring = lazy(() => import('@/components/FollowPointerWithSpring'));
+const LayoutAnimation = lazy(() => import('@/components/LayoutAnimation'));
+const MotionAlongPath = lazy(() => import('@/components/MotionAlongPath'));
+const Parallax = lazy(() => import('@/components/Parallax'));
+const PathDrawing = lazy(() => import('@/components/PathDrawing'));
+const SplitText = lazy(() => import('@/components/SplitText'));
+const PathMorphing = lazy(() => import('@/components/PathMorphing'));
 
 const Page = () => {
   return (
-    <div className="py-40 px-8">
+    <div className="py-40 px-8 flex flex-col justify-center">
       <LazyComponent>
         <CssSpring />
       </LazyComponent>
@@ -89,8 +89,26 @@ const LazyComponent = ({ children }: { children: React.ReactNode }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Only trigger once when entering viewport
     threshold: 0.1, // Trigger when 10% is visible
-    rootMargin: '-200px 0px', // Load 200px before entering viewport
+    rootMargin: '-200px 0px', // Load -200px before entering viewport
   });
 
-  return <div ref={ref}>{inView ? children : <div style={{ height: '200px' }}>Loading...</div>}</div>;
+  return (
+    <div ref={ref}>
+      {inView ? (
+        <Suspense
+          fallback={
+            <h2 className="m-6 w-72 h-40 text-center content-center text-lg text-emerald-400 border border-emerald-600 rounded-md">
+              Loading Component...
+            </h2>
+          }
+        >
+          {children}
+        </Suspense>
+      ) : (
+        <h2 className="m-6 w-72 h-40 text-center content-center text-lg text-red-400 border border-red-600 rounded-md">
+          Placeholder
+        </h2>
+      )}
+    </div>
+  );
 };
