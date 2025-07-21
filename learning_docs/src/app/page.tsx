@@ -22,10 +22,14 @@ const PathDrawing = lazy(() => import('@/components/PathDrawing'));
 const SplitText = lazy(() => import('@/components/SplitText'));
 const PathMorphing = lazy(() => import('@/components/PathMorphing'));
 const DragLock = lazy(() => import('@/components/DragLock'));
+const ScrollAnimation = lazy(() => import('@/components/ScrollAnimation'));
 
 const Page = () => {
   return (
     <div className="py-40 px-8 flex flex-col justify-center">
+      <LazyComponent>
+        <ScrollAnimation />
+      </LazyComponent>
       <LazyComponent>
         <DragLock />
       </LazyComponent>
