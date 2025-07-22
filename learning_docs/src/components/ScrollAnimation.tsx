@@ -12,7 +12,7 @@ const ScrollAnimation = () => {
   return (
     <fieldset>
       <legend>ScrollAnimation</legend>
-      <div id="dragContainer" className="px-6 py-16 border border-amber-50">
+      <div id="scrollAnimationContainer" className="px-6 py-16 border border-amber-50">
         <div id="example">
           <svg id="progress" width="80" height="80" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />

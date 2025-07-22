@@ -19,7 +19,7 @@ const UsePresence = () => {
   return (
     <fieldset>
       <legend>UsePresence</legend>
-      <div id="dragContainer" className="w-1/2 h-40 border border-amber-50 flex justify-center items-center">
+      <div id="usePresenceContainer" className="w-1/2 h-40 border border-amber-50 flex justify-center items-center">
         <div style={container}>
           <motion.button
             initial={false}
