@@ -25,10 +25,18 @@ const DragLock = lazy(() => import('@/components/DragLock'));
 const ScrollAnimation = lazy(() => import('@/components/ScrollAnimation'));
 const UsePresence = lazy(() => import('@/components/UsePresence'));
 const UseTime = lazy(() => import('@/components/UseTime'));
+const SharedLayout = lazy(() => import('@/components/SharedLayout'));
+const CrossTick = lazy(() => import('@/components/CrossTick'));
 
 const Page = () => {
   return (
     <div className="py-40 px-8 flex flex-col justify-center">
+      <LazyComponent>
+        <CrossTick />
+      </LazyComponent>
+      <LazyComponent>
+        <SharedLayout />
+      </LazyComponent>
       <LazyComponent>
         <UseTime />
       </LazyComponent>
