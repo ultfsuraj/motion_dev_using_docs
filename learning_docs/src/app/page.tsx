@@ -27,10 +27,14 @@ const UsePresence = lazy(() => import('@/components/UsePresence'));
 const UseTime = lazy(() => import('@/components/UseTime'));
 const SharedLayout = lazy(() => import('@/components/SharedLayout'));
 const CrossTick = lazy(() => import('@/components/CrossTick'));
+const Hamburger = lazy(() => import('@/components/Hamburger'));
 
 const Page = () => {
   return (
     <div className="py-40 px-8 flex flex-col justify-center">
+      <LazyComponent>
+        <Hamburger />
+      </LazyComponent>
       <LazyComponent>
         <CrossTick />
       </LazyComponent>
