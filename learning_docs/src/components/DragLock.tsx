@@ -9,7 +9,7 @@ const Drag = () => {
   return (
     <fieldset>
       <legend>Drag Lock</legend>
-      <div id="dragContainer" className="w-[200px] h-[200px] border border-amber-50 relative">
+      <div id="dragLockContainer" className="w-[200px] h-[200px] border border-amber-50 relative">
         <Line direction="x" activeDir={activeDir} />
         <Line direction="y" activeDir={activeDir} />
         <motion.div
